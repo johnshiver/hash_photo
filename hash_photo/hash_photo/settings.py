@@ -1,6 +1,5 @@
 # Django settings for hash_photo project.
 import os
-from unipath import Path
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
