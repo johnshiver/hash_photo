@@ -56,8 +56,8 @@ AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 S3_URL = 'https://%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 MEDIA_URL = S3_URL + '/media/'
 
-MEDIA_ROOT = os.path.join(PROJECT_ROOT, '../..',  'media')
-STATIC_ROOT = os.path.join(PROJECT_ROOT, '../..', 'static')
+# MEDIA_ROOT = os.path.join(PROJECT_ROOT, '../..',  'media')
+STATIC_ROOT = '/home/ubuntu/hash_photo/static/'
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
