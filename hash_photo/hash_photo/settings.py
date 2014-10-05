@@ -2,7 +2,7 @@
 import os
 from unipath import Path
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -58,7 +58,7 @@ S3_URL = 'https://%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 MEDIA_URL = S3_URL + '/media/'
 
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, '../..',  'media')
-STATIC_ROOT = os.path.join(PROJECT_ROOT, '../', 'static')
+STATIC_ROOT = os.path.join(PROJECT_ROOT, '../..', 'static')
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
