@@ -1,3 +1,6 @@
 from django.db import models
 
-# Create your models here.
+
+class ItemPhoto(models.Model):
+    photo = models.ImageField(upload_to='photos')
+    name = models.CharField(max_length=100)
