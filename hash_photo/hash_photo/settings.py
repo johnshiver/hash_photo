@@ -11,7 +11,7 @@ djcelery.setup_loader()
 
 BROKER_URL = 'sqs://'
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -91,7 +91,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'mulp8i_+zyirj46i)r5lv2_9cyybz8p^0q0f)hi)3)o*iv_n7s'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
