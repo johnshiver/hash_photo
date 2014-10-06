@@ -1,5 +1,15 @@
 # Django settings for hash_photo project.
 import os
+import djcelery
+import sys
+
+
+# celery stuff
+# should fix issue with relative imports
+sys.path.append(os.path.dirname(os.path.realpath(__file__)))
+djcelery.setup_loader()
+
+BROKER_URL = 'sqs://'
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -119,6 +129,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'storages',
     'photos',
+    'djcelery',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
