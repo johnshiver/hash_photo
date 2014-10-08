@@ -53,10 +53,6 @@ USE_L10N = True
 # If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
 
-# URL that handles the media served from MEDIA_ROOT. Make sure to use a
-# trailing slash.
-# Examples: "http://example.com/media/", "http://media.example.com/"
-MEDIA_URL = ''
 
 # Settings for S3 integration
 DEFAULT_FILE_STORAGE = 'hash_photo.s3utils.MediaRootS3BotoStorage'
@@ -68,6 +64,7 @@ MEDIA_URL = S3_URL + '/media/'
 
 # MEDIA_ROOT = os.path.join(PROJECT_ROOT, '../..',  'media')
 # STATIC_ROOT = os.path.join(PROJECT_ROOT, '../..',  'static')
+
 # For production
 STATIC_ROOT = '/home/ubuntu/hash_photo/static/'
 

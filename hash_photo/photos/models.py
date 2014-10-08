@@ -9,5 +9,5 @@ class ItemPhoto(models.Model):
     def save(self, elevation=True, *args, **kwargs):
         super(ItemPhoto, self).save(*args, **kwargs)
         if elevation:
-            from photos.tasks import dummy_hash
-            dummy_hash.delay(self.id)
+            from photos.tasks import make_hash
+            make_hash.delay(self.id)
