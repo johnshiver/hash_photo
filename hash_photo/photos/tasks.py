@@ -1,15 +1,19 @@
-from celery import task
+from celery import shared_task
 from .models import ItemPhoto
-import pHash
-from django.core.files.temp import NamedTemporaryFile
+# import pHash
+# from django.core.files.temp import NamedTemporaryFile
 
 
-@task
+@shared_task
 def make_hash(itemPhoto_id):
     recent_photo = ItemPhoto.objects.get(pk=itemPhoto_id)
-    temp = NamedTemporaryFile(delete=False)
-    temp.write(recent_photo.photo.read())
-    hash1 = pHash.imagehash(temp.name)
+
+    # temp = NamedTemporaryFile(delete=False)
+    # temp.write(recent_photo.photo.read())
+    # hash1 = pHash.imagehash(temp.name)
+
+    hash1 = 'super_big_hash_string'
+
     recent_photo.phash = str(hash1)
     is_duplicate = ItemPhoto.objects.filter(phash=recent_photo.phash).exists()
     recent_photo.duplicate = is_duplicate
