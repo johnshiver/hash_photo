@@ -12,7 +12,7 @@ djcelery.setup_loader()
 BROKER_URL = 'sqs://'
 CELERY_RESULT_BACKEND = 'djcelery.backends.database:DatabaseBackend'
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -35,7 +35,7 @@ DATABASES = {
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ['http://ec2-54-69-87-6.us-west-2.compute.amazonaws.com/']
+# ALLOWED_HOSTS = ['http://ec2-54-69-87-6.us-west-2.compute.amazonaws.com/']
 
 TIME_ZONE = 'America/Chicago'
 
